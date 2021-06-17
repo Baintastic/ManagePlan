@@ -1,0 +1,27 @@
+
+
+<div class="container mb-5">
+    <h1 class="display-4 text-center mt-5">Person Details</h1>
+    <form novalidate #form="ngForm" (submit) ="onSubmit(form)">
+        <input type="hidden" name="id"
+               value="service.formData.id"/>
+        <div class="row d-flex align-items-center justify-content-center mt-5">
+            <div class="form-group col-md-3">
+                <input class="form-control" placeholder="First Name"
+                    name="name" #firstname="ngModel" [(ngModel)]="service.formData.name" required/>
+            </div>
+            <div class="form-group col-md-3">
+                <input class="form-control" placeholder="Surname"
+                    name="surname" #firstname="ngModel" [(ngModel)]="service.formData.surname" required/>
+            </div>
+            <div class="form-group col-md-3">
+                <input class="form-control" placeholder="ID Number"
+                    name="idNumber" #firstname="ngModel" [(ngModel)]="service.formData.id_Number" required/>
+            </div>
+            <div class="form-group col-md-1">
+                <button class="btn btn-primary btn-block" type="submit" [disabled]="form.invalid">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+<app-accounts *ngIf="isEditForm"></app-accounts>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ManagePlan</name>
+    </assembly>
+    <members>
+        <member name="T:ManagePlan.Repository.ServiceRegistration">
+            <Summary>
+             Registers interfaces with the implementations to the Service Container 
+            </Summary>
+        </member>
+        <member name="M:ManagePlan.Repository.ServiceRegistration.AddInfrastructure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <Summary>
+             Add interfaces with the concrete classes
+            </Summary>
+        </member>
+    </members>
+</doc>
