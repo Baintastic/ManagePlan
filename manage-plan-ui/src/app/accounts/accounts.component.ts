@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { PersonService } from '../persons/shared/person.service';
 import { Account } from './shared/account.model';
 import { AccountService } from './shared/account.service';
@@ -11,12 +12,16 @@ import { AccountService } from './shared/account.service';
 })
 export class AccountsComponent implements OnInit {
 
-  constructor(public personService: PersonService,public accountService: AccountService ) { }
+  
+  constructor(public accountService: AccountService, private route: ActivatedRoute ) { }
   searchText: string = "";
   formData: Account = new Account();
+  personId: number = 0;
 
   ngOnInit(): void {
-    this.accountService.refreshList(this.personService.formData.code);
+    this.personId = Number(this.route.snapshot.paramMap.get('id'));
+    this.accountService.refreshList(this.personId);
+    console.log("person id 1 is",this.personId);
   }
 
   populateForm(selectedRecord: Account) {
@@ -28,7 +33,7 @@ export class AccountsComponent implements OnInit {
     this.accountService.deleteAccount(id)
     .subscribe(
       res=>{
-         this.accountService.refreshList(this.personService.formData.code);
+         this.accountService.refreshList(this.personId);
       },
       err=>{console.log(err)}
     )

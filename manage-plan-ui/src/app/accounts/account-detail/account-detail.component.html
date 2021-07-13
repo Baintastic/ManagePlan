@@ -1,21 +1,40 @@
 <div class="container mb-5">
     <h1 class="display-4 text-center mt-5">Account Details</h1>
-    <form novalidate #form="ngForm" (submit) ="onSubmit(form)">
-        <input type="hidden" name="id"
-               value="service.formData.id"/>
-        <input type="hidden" name="person_code"
-        value="service.formData.person_code"/>
-        <div class="row d-flex align-items-center justify-content-center mt-5">
-            <div class="form-group col-md-3">
-                <input class="form-control" placeholder="Account Number"
-                    name="account_number" #firstname="ngModel" [(ngModel)]="service.formData.account_Number" required/>
-            </div>
-            <div class="form-group col-md-3">
-                <input type="number" class="form-control" placeholder="Outstanding Balance"
-                    name="outstanding_balance" #firstname="ngModel" [(ngModel)]="service.formData.outstanding_Balance" required readonly/>
-            </div>
-            <div class="form-group col-md-1">
-                <button class="btn btn-primary btn-block" type="submit" [disabled]="form.invalid">Save</button>
+    <form novalidate #form="ngForm" (submit)="onSubmit(form)">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="card bg-light" style="max-width: 60rem;">
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <input type="hidden" name="id" value="service.formData.id" />
+                        <input type="hidden" name="person_code" value="service.formData.person_Code"
+                            [(ngModel)]="personId" />
+                        <div class="row d-flex align-items-center justify-content-center mt-5">
+                            <div class="form-group col-md-6">
+                                <label for="name">Account Number</label>
+                                <input class="form-control" placeholder="Account Number" name="account_number"
+                                    #account_number="ngModel" [(ngModel)]="service.formData.account_Number" required />
+                                <div [hidden]="account_number.valid || account_number.pristine" class="alert-danger">
+                                    Account Number is required
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex align-items-center justify-content-center mt-2">
+                            <div class="form-group col-md-6">
+                                <label for="name">Outstanding Balance</label>
+                                <input type="number" class="form-control" placeholder="Outstanding Balance"
+                                    name="outstanding_balance" #outstanding_Balance="ngModel"
+                                    [(ngModel)]="service.formData.outstanding_Balance" required readonly />
+                            </div>
+                        </div>
+
+                        <div class="row mt-5">
+                            <div class="d-grid gap-2 col-6 mx-auto">
+                                <button class="btn btn-primary btn-block" type="submit"
+                                    [disabled]="form.invalid">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </form>

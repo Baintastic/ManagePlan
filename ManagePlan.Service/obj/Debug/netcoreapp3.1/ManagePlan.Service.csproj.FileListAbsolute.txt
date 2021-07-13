@@ -26,3 +26,17 @@ C:\Users\ThabaniTembe\source\repos\ManagePlanProject\ManagePlan.Service\obj\Debu
 C:\Users\ThabaniTembe\source\repos\ManagePlanProject\ManagePlan.Service\obj\Debug\netcoreapp3.1\ManagePlan.Service.csproj.CopyComplete
 C:\Users\ThabaniTembe\source\repos\ManagePlanProject\ManagePlan.Service\obj\Debug\netcoreapp3.1\ManagePlan.Service.dll
 C:\Users\ThabaniTembe\source\repos\ManagePlanProject\ManagePlan.Service\obj\Debug\netcoreapp3.1\ManagePlan.Service.pdb
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service\bin\Debug\netcoreapp3.1\ManagePlan.Service.deps.json
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service\bin\Debug\netcoreapp3.1\ManagePlan.Service.dll
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service\bin\Debug\netcoreapp3.1\ManagePlan.Service.pdb
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service\bin\Debug\netcoreapp3.1\ManagePlan.Core.dll
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service\bin\Debug\netcoreapp3.1\ManagePlan.Repository.dll
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service\bin\Debug\netcoreapp3.1\ManagePlan.Repository.pdb
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service\bin\Debug\netcoreapp3.1\ManagePlan.Core.pdb
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service\obj\Debug\netcoreapp3.1\ManagePlan.Service.csprojAssemblyReference.cache
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service\obj\Debug\netcoreapp3.1\ManagePlan.Service.AssemblyInfoInputs.cache
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service\obj\Debug\netcoreapp3.1\ManagePlan.Service.AssemblyInfo.cs
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service\obj\Debug\netcoreapp3.1\ManagePlan.Service.csproj.CoreCompileInputs.cache
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service\obj\Debug\netcoreapp3.1\ManagePlan.Service.csproj.CopyComplete
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service\obj\Debug\netcoreapp3.1\ManagePlan.Service.dll
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service\obj\Debug\netcoreapp3.1\ManagePlan.Service.pdb

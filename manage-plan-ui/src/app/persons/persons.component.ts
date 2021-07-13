@@ -31,17 +31,10 @@ export class PersonsComponent implements OnInit {
       search: new FormControl(''),
     });
 
-    
-    // this.form.get('search').valueChanges
-    // .subscribe(x => {
-    //   this.form.get('input2').setValue(x);
-    //   this.setTotalValue();
-    // })
-
   }
 
   populateForm(selectedRecord: Person) {
-    this.service.formData = Object.assign({},selectedRecord);
+    this.service.formData = Object.assign({}, selectedRecord);
     //this.router.navigate([`detail/${selectedRecord.code}`], { relativeTo: this.route });
   }
  

@@ -26,8 +26,8 @@ namespace ManagePlan
                                                                      .AllowAnyMethod()
                                                                       .AllowAnyHeader()));
             services.AddMvc(option => option.EnableEndpointRouting = false);
-        
 
+            services.AddControllers().AddNewtonsoftJson();
             services.AddControllersWithViews();
             services.AddInfrastructure();
             services.AddSwaggerGen(c =>

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Transaction } from './transaction.model';
 
@@ -13,8 +13,8 @@ export class TransactionService {
   formData: Transaction = new Transaction();
   list: Transaction[] = [];
 
-  postTransaction() {
-      return this.http.post(this._baseUrl ,this.formData);
+  postTransaction(formValue : any) {
+      return this.http.post(this._baseUrl ,formValue, {headers : new HttpHeaders({ 'Content-Type': 'application/json' })});
     }
 
   putTransaction() {

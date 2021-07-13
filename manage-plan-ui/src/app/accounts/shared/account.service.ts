@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Account } from './account.model';
 
@@ -8,13 +8,13 @@ import { Account } from './account.model';
 export class AccountService {
 
   constructor(private http: HttpClient) { }
-
+  
   readonly _baseUrl = "https://localhost:44343/api/Account";
   formData: Account = new Account();
   list: Account[] = [];
 
-  postAccount() {
-      return this.http.post(this._baseUrl ,this.formData);
+  postAccount(formValue : any) {
+      return this.http.post(this._baseUrl ,formValue, {headers : new HttpHeaders({ 'Content-Type': 'application/json' })});
     }
 
   putAccount() {
@@ -31,4 +31,5 @@ export class AccountService {
         .toPromise()
         .then(res => {this.list = res as Account[]; });
     }
+
 }

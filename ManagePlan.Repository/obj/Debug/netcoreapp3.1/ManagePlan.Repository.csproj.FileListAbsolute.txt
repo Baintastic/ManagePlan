@@ -22,3 +22,15 @@ C:\Users\ThabaniTembe\source\repos\ManagePlanProject\ManagePlan.Repository\obj\D
 C:\Users\ThabaniTembe\source\repos\ManagePlanProject\ManagePlan.Repository\obj\Debug\netcoreapp3.1\ManagePlan.Repository.csproj.CopyComplete
 C:\Users\ThabaniTembe\source\repos\ManagePlanProject\ManagePlan.Repository\obj\Debug\netcoreapp3.1\ManagePlan.Repository.dll
 C:\Users\ThabaniTembe\source\repos\ManagePlanProject\ManagePlan.Repository\obj\Debug\netcoreapp3.1\ManagePlan.Repository.pdb
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository\bin\Debug\netcoreapp3.1\ManagePlan.Repository.deps.json
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository\bin\Debug\netcoreapp3.1\ManagePlan.Repository.dll
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository\bin\Debug\netcoreapp3.1\ManagePlan.Repository.pdb
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository\bin\Debug\netcoreapp3.1\ManagePlan.Core.dll
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository\bin\Debug\netcoreapp3.1\ManagePlan.Core.pdb
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository\obj\Debug\netcoreapp3.1\ManagePlan.Repository.csprojAssemblyReference.cache
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository\obj\Debug\netcoreapp3.1\ManagePlan.Repository.AssemblyInfoInputs.cache
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository\obj\Debug\netcoreapp3.1\ManagePlan.Repository.AssemblyInfo.cs
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository\obj\Debug\netcoreapp3.1\ManagePlan.Repository.csproj.CoreCompileInputs.cache
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository\obj\Debug\netcoreapp3.1\ManagePlan.Repository.csproj.CopyComplete
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository\obj\Debug\netcoreapp3.1\ManagePlan.Repository.dll
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository\obj\Debug\netcoreapp3.1\ManagePlan.Repository.pdb

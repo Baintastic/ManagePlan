@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Person } from '../shared/person.model';
 import { PersonService } from '../shared/person.service';
@@ -12,12 +12,6 @@ import { PersonService } from '../shared/person.service';
 })
 export class PersonDetailComponent implements OnInit {
   isEditForm = true;
-  personForm = new FormGroup({
-    name: new FormControl(''),
-    surname: new FormControl(''),
-    idNumber: new FormControl(''),
-  });
-
   constructor(public service: PersonService, private router: Router) { }
 
   ngOnInit(): void {
@@ -28,14 +22,14 @@ export class PersonDetailComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    if(this.service.formData.code == 0) //we will use the id as identifier for updating or insertion
+    if(this.service.formData.code == 0)
     this.insertRecord(form);
     else
     this.updateRecord(form);
   }
 
-  insertRecord(form:NgForm) {
-      this.service.postPerson().subscribe(
+  insertRecord(form: NgForm) {
+      this.service.postPerson(form.value).subscribe(
         res => {
           this.resetForm(form);
           this.service.refreshList();

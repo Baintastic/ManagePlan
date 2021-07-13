@@ -1,3 +1,5 @@
+import { Person } from "src/app/persons/shared/person.model";
+
 export class Account {
     code : number;
     person_Code : number;

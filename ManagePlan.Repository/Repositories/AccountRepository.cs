@@ -62,7 +62,7 @@ namespace ManagePlan.Repository.Repositories
 
         public async Task Update(Account entity)
         {
-            var sql = "UPDATE [dbo].Accounts SET account_number = @AccountNumber, outstanding_balance = @Oustanding_Balance WHERE code = @Code";
+            var sql = "UPDATE [dbo].Accounts SET account_number = @Account_Number, outstanding_balance = @Outstanding_Balance WHERE code = @Code";
             using (var connection = new SqlConnection(configuration.GetConnectionString("DefaultConnection")))
             {
                 connection.Open();
@@ -72,7 +72,7 @@ namespace ManagePlan.Repository.Repositories
 
         public async Task<IEnumerable<Account>> GetAllByPersonId(int personId)
         {
-            var sql = "SELECT * FROM [dbo].Accounts WHERE code = @Person_Code";
+            var sql = "SELECT * FROM [dbo].Accounts WHERE person_code = @Person_Code";
             using (var connection = new SqlConnection(configuration.GetConnectionString("DefaultConnection")))
             {
                 connection.Open();

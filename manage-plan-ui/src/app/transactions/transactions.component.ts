@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AccountService } from '../accounts/shared/account.service';
 import { Transaction } from './shared/transaction.model';
 import { TransactionService } from './shared/transaction.service';
@@ -11,11 +12,15 @@ import { TransactionService } from './shared/transaction.service';
 })
 export class TransactionsComponent implements OnInit {
 
-  constructor(public accountService: AccountService,public transactionService: TransactionService ) { }
+  constructor(public transactionService: TransactionService, private route: ActivatedRoute ) { }
   formData: Transaction = new Transaction();
+  accountId: number = 0;
 
   ngOnInit(): void {
-    this.transactionService.refreshList(this.accountService.formData.code);
+    this.accountId = Number(this.route.snapshot.paramMap.get('id'));
+    this.transactionService.refreshList(this.accountId);
+    console.log("account id is",this.accountId);
+
   }
 
   populateForm(selectedRecord: Transaction) {
@@ -27,7 +32,7 @@ export class TransactionsComponent implements OnInit {
     this.transactionService.deleteTransaction(id)
     .subscribe(
       res=>{
-         this.transactionService.refreshList(this.accountService.formData.code);
+         this.transactionService.refreshList(this.accountId);
       },
       err=>{console.log(err)}
     )
