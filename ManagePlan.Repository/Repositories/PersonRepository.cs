@@ -70,18 +70,30 @@ namespace ManagePlan.Repository.Repositories
             }
         }
 
-        public async Task<Person> GetByIdNumberOrSurnameOrAccountNumber(string idNumber, string surname, string accountNumber)
+        public async Task<Person> GetByIdNumber(string idNumber)
         {
-            var sql = "SELECT * FROM [dbo].Persons p " +
-                    "JOIN [dbo].Accounts acc on p.code = acc.person_code " +
-                    "WHERE acc.account_number = @AccountNumber OR p.surname = @Surname OR p.id_number = @Id_Number";
+            var sql = "SELECT * FROM [dbo].Persons p WHERE p.id_number = @Id_Number";
             using (var connection = new SqlConnection(configuration.GetConnectionString("DefaultConnection")))
             {
                 connection.Open();
-                var parameters = new { Id_Number = idNumber, Surname = surname, AccountNumber = accountNumber };
+                var parameters = new { Id_Number = idNumber };
                 var result = await connection.QuerySingleOrDefaultAsync<Person>(sql, parameters);
                 return result;
             }
         }
+
+        //public async Task<Person> GetByIdNumberOrSurnameOrAccountNumber(string idNumber, string surname, string accountNumber)
+        //{
+        //    var sql = "SELECT * FROM [dbo].Persons p " +
+        //            "JOIN [dbo].Accounts acc on p.code = acc.person_code " +
+        //            "WHERE acc.account_number = @AccountNumber OR p.surname = @Surname OR p.id_number = @Id_Number";
+        //    using (var connection = new SqlConnection(configuration.GetConnectionString("DefaultConnection")))
+        //    {
+        //        connection.Open();
+        //        var parameters = new { Id_Number = idNumber, Surname = surname, AccountNumber = accountNumber };
+        //        var result = await connection.QuerySingleOrDefaultAsync<Person>(sql, parameters);
+        //        return result;
+        //    }
+        //}
     }
 }

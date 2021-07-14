@@ -39,9 +39,9 @@ namespace ManagePlan.Service
             return personRepository.Update(person);
         }
 
-        public Task<Person> GetPersonByIdNumberOrSurnameOrAccountNumber(string idNumber, string surname, string accountNumber)
+        public Task<Person> GetPersonByIdNumber(string idNumber)
         {
-            return personRepository.GetByIdNumberOrSurnameOrAccountNumber(idNumber, surname, accountNumber);
+            return personRepository.GetByIdNumber(idNumber);
         }
     }
 }

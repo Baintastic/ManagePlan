@@ -13,30 +13,30 @@ export class PersonService {
   formData: Person = new Person();
   list: Person[] = [];
 
-  postPerson(formValue : any) {
-      return this.http.post(this._baseUrl ,formValue, {headers : new HttpHeaders({ 'Content-Type': 'application/json' })});
-    }
+  postPerson(formValue: any) {
+    return this.http.post(this._baseUrl, formValue, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) });
+  }
 
   putPerson() {
-      return this.http.put(`${this._baseUrl}` ,this.formData);
-    }
+    return this.http.put(`${this._baseUrl}`, this.formData);
+  }
 
-  deletePerson(id:number)
-    {
-       return this.http.delete(`${this._baseUrl}/${id}`);
-    }
+  deletePerson(id: number) {
+    return this.http.delete(`${this._baseUrl}/${id}`);
+  }
 
-  getPerson(id:number)
-  {
-      return this.http.get(`${this._baseUrl}/${id}`)
-      .toPromise()
-      .then(res => {this.formData = res as Person; });;
+  getPersonById(id: number) {
+    return this.http.get(`${this._baseUrl}/${id}`);
+  }
+
+  getPersonByIdNumber(idNumber: string) {
+    return this.http.get(`${this._baseUrl}/idNumber/${idNumber}`);
   }
 
   refreshList() {
-      this.http.get(this._baseUrl)
-        .toPromise()
-        .then(res => {this.list = res as Person[]; });
-        
-    }
+    this.http.get(this._baseUrl)
+      .toPromise()
+      .then(res => { this.list = res as Person[]; });
+  }
+
 }

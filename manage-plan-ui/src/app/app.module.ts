@@ -14,6 +14,8 @@ import { TransactionsComponent } from './transactions/transactions.component';
 import { HomeComponent } from './home/home.component';
 import { TransactionDetailComponent } from './transactions/transaction-details/transaction-detail.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AlertModule } from './alert/alert.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AccountDetailComponent,
     TransactionsComponent,
     HomeComponent,
-    TransactionDetailComponent
+    TransactionDetailComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReactiveFormsModule,
     HttpClientModule,
     Ng2SearchPipeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AlertModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

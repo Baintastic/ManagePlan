@@ -5,22 +5,25 @@
             <div class="card bg-light" style="max-width: 60rem;">
                 <div class="card-body">
                     <div class="container-fluid">
-                        <input type="hidden" name="id" value="service.formData.id" />
+                        <!-- <input type="hidden" name="id" value="personService.formData.id" /> -->
                         <div class="row d-flex align-items-center justify-content-center mt-5">
                             <div class="form-group col-md-6">
                                 <label for="name">First Name</label>
-                                <input class="form-control" placeholder="First Name" name="firstname"
-                                    #firstname="ngModel" [(ngModel)]="service.formData.name" required />
-                                <div [hidden]="firstname.valid || firstname.pristine" class="alert-danger">
+                                <input type="text" class="form-control" placeholder="First Name" name="name"
+                                    #name="ngModel" [(ngModel)]="personService.formData.name" required minlength="3" />
+                                <div [hidden]="name.valid || name.pristine" class="alert-danger">
                                     Name is required
                                 </div>
+                                <div *ngIf="name.errors?.minlength" class="alert-danger">
+                                    Name must be at least 3 characters long.
+                                  </div>
                             </div>
                         </div>
                         <div class="row d-flex align-items-center justify-content-center mt-2">
                             <div class="form-group col-md-6">
                                 <label for="name">Surname</label>
-                                <input class="form-control" placeholder="Surname" name="surname" #surname="ngModel"
-                                    [(ngModel)]="service.formData.surname" required />
+                                <input type="text" class="form-control" placeholder="Surname" name="surname" #surname="ngModel"
+                                    [(ngModel)]="personService.formData.surname" required />
                                 <div [hidden]="surname.valid || surname.pristine" class="alert-danger">
                                     Surname is required
                                 </div>
@@ -29,18 +32,24 @@
                         <div class="row d-flex align-items-center justify-content-center mt-2">
                             <div class="form-group col-md-6">
                                 <label for="name">ID Number</label>
-                                <input class="form-control" placeholder="ID Number" name="idNumber" #idNumber="ngModel"
-                                    [(ngModel)]="service.formData.id_Number" required />
-                                <div [hidden]="idNumber.valid || idNumber.pristine" class="alert-danger">
+                                <input type="text" class="form-control" placeholder="ID Number" name="id_Number" #id_Number="ngModel"
+                                    [(ngModel)]="personService.formData.id_Number" required minlength="13" maxlength="13"/>
+                                <div [hidden]="id_Number.valid || id_Number.pristine" class="alert-danger">
                                     ID Number is required
                                 </div>
+                                <div *ngIf="name.errors?.minlength">
+                                    ID Number must be 13 characters long.
+                                  </div>
                             </div>
                         </div>
                         <div class="row mt-5">
                             <div class="d-grid gap-2 col-6 mx-auto">
                                 <button class="btn btn-primary btn-block" type="submit"
-                                    [disabled]="form.invalid">Save</button>
+                                    [disabled]="form.invalid" >Save</button>
                             </div>
+                        </div>
+                        <div *ngIf="showAlert" class="row d-flex align-items-center justify-content-center mt-2">
+                            <app-alert></app-alert>
                         </div>
                     </div>
                 </div>
@@ -49,12 +58,4 @@
     </form>
 </div>
 <app-accounts *ngIf="isEditForm"></app-accounts>
-<!-- 
-<div class="row d-flex align-items-center justify-content-center mt-2">
-    <div class="form-group col-md-3">
-        <label for="name">Surname</label>
-        <input class="form-control" placeholder="Surname" name="surname" #firstname="ngModel"
-            [(ngModel)]="service.formData.surname" required />
-    </div>
 
-</div> -->

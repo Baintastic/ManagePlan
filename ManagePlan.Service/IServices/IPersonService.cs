@@ -11,6 +11,6 @@ namespace ManagePlan.Service.IServices
         Task AddPerson(Person entity);
         Task UpdatePerson(Person entity);
         Task DeletePerson(int id);
-        Task<Person> GetPersonByIdNumberOrSurnameOrAccountNumber(string idNumber, string surname, string accountNumber);
+        Task<Person> GetPersonByIdNumber(string idNumber);
     }
 }
