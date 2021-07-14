@@ -12,6 +12,6 @@ namespace ManagePlan.Service.IServices
         public Task<Account> GetAccountById(int id);
         public Task UpdateAccount(Account person);
         Task<IEnumerable<Account>> GetAccountsByPersonId(int personId);
-        Task<Account> GetAccountByIdNumberOrSurnameOrAccountNumber(string idNumber, string surname, string accountNumber);
+        Task<Account> GetAccountByAccountNumber(string accountNumber);
     }
 }

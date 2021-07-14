@@ -23,7 +23,7 @@
                         <div class="row d-flex align-items-center justify-content-center mt-2">
                             <div class="form-group col-md-6">
                                 <label for="name">Description</label>
-                                <input class="form-control" placeholder="Description" name="description"
+                                <input type="text" class="form-control" placeholder="Description" name="description"
                                     #description="ngModel" [(ngModel)]="service.formData.description" required />
                                 <div [hidden]="description.valid || description.pristine" class="alert-danger">
                                     Description is required
@@ -45,6 +45,9 @@
                                 <button class="btn btn-primary btn-block" type="submit"
                                     [disabled]="form.invalid">Save</button>
                             </div>
+                        </div>
+                        <div *ngIf="showAlert" class="row d-flex align-items-center justify-content-center mt-2">
+                            <app-alert></app-alert>
                         </div>
                     </div>
                 </div>

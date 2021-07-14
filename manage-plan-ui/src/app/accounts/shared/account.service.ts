@@ -31,7 +31,11 @@ export class AccountService {
       .then(res => { this.list = res as Account[]; });
   }
 
-  getAccount(id: number) {
+  getAccountByAccountNumber(accountNumber: number) {
+    return this.http.get(`${this._baseUrl}/accountNumber/${accountNumber}`);
+  }
+
+  getAccountById(id: number) {
     return this.http.get(`${this._baseUrl}/${id}`);
   }
 

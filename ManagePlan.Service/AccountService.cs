@@ -44,9 +44,9 @@ namespace ManagePlan.Service
             return accountRepository.GetAllByPersonId(personId);
         }
 
-        public Task<Account> GetAccountByIdNumberOrSurnameOrAccountNumber(string idNumber, string surname, string accountNumber)
+        public Task<Account> GetAccountByAccountNumber(string accountNumber)
         {
-            return accountRepository.GetByIdNumberOrSurnameOrAccountNumber(idNumber, surname, accountNumber);
+            return accountRepository.GetByAccountNumber(accountNumber);
         }
     }
 }

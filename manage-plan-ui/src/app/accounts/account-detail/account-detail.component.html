@@ -5,15 +5,15 @@
             <div class="card bg-light" style="max-width: 60rem;">
                 <div class="card-body">
                     <div class="container-fluid">
-                        <input type="hidden" name="id" value="service.formData.id" />
-                        <input type="hidden" name="person_code" value="service.formData.person_Code"
+                        <input type="hidden" name="id" value="accountService.formData.id" />
+                        <input type="hidden" name="person_code" value="accountService.formData.person_Code"
                             [(ngModel)]="personId" />
                         <div class="row d-flex align-items-center justify-content-center mt-5">
                             <div class="form-group col-md-6">
                                 <label for="name">Account Number</label>
-                                <input class="form-control" placeholder="Account Number" name="account_number"
-                                    #account_number="ngModel" [(ngModel)]="service.formData.account_Number" required />
-                                <div [hidden]="account_number.valid || account_number.pristine" class="alert-danger">
+                                <input type="text" class="form-control" placeholder="Account Number" name="account_Number"
+                                    #account_Number="ngModel" [(ngModel)]="accountService.formData.account_Number" required />
+                                <div [hidden]="account_Number.valid || account_Number.pristine" class="alert-danger">
                                     Account Number is required
                                 </div>
                             </div>
@@ -23,7 +23,7 @@
                                 <label for="name">Outstanding Balance</label>
                                 <input type="number" class="form-control" placeholder="Outstanding Balance"
                                     name="outstanding_balance" #outstanding_Balance="ngModel"
-                                    [(ngModel)]="service.formData.outstanding_Balance" required readonly />
+                                    [(ngModel)]="accountService.formData.outstanding_Balance" required readonly />
                             </div>
                         </div>
 
@@ -32,6 +32,9 @@
                                 <button class="btn btn-primary btn-block" type="submit"
                                     [disabled]="form.invalid">Save</button>
                             </div>
+                        </div>
+                        <div *ngIf="showAlert" class="row d-flex align-items-center justify-content-center mt-2">
+                            <app-alert></app-alert>
                         </div>
                     </div>
                 </div>

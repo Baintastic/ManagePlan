@@ -61,12 +61,12 @@ namespace ManagePlan.Controllers
             return Ok(data);
         }
 
-        //[HttpGet("{idNumber}/{surname}/{accountNumber}")]
-        //public async Task<IActionResult> GetByIdNumberOrSurnameOrAccountNumber(string idNumber, string surname, string accountNumber)
-        //{
-        //    var data = await accountService.GetAccountByIdNumberOrSurnameOrAccountNumber(idNumber, surname, accountNumber);
-        //    if (data == null) return Ok();
-        //    return Ok(data);
-        //}
+        [HttpGet("accountNumber/{accountNumber}")]
+        public async Task<IActionResult> GetByIdNumberr(string accountNumber)
+        {
+            var data = await accountService.GetAccountByAccountNumber(accountNumber);
+            if (data == null) return Ok();
+            return Ok(data);
+        }
     }
 }

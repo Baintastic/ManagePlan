@@ -16,14 +16,14 @@
                                 </div>
                                 <div *ngIf="name.errors?.minlength" class="alert-danger">
                                     Name must be at least 3 characters long.
-                                  </div>
+                                </div>
                             </div>
                         </div>
                         <div class="row d-flex align-items-center justify-content-center mt-2">
                             <div class="form-group col-md-6">
                                 <label for="name">Surname</label>
-                                <input type="text" class="form-control" placeholder="Surname" name="surname" #surname="ngModel"
-                                    [(ngModel)]="personService.formData.surname" required />
+                                <input type="text" class="form-control" placeholder="Surname" name="surname"
+                                    #surname="ngModel" [(ngModel)]="personService.formData.surname" required />
                                 <div [hidden]="surname.valid || surname.pristine" class="alert-danger">
                                     Surname is required
                                 </div>
@@ -32,20 +32,21 @@
                         <div class="row d-flex align-items-center justify-content-center mt-2">
                             <div class="form-group col-md-6">
                                 <label for="name">ID Number</label>
-                                <input type="text" class="form-control" placeholder="ID Number" name="id_Number" #id_Number="ngModel"
-                                    [(ngModel)]="personService.formData.id_Number" required minlength="13" maxlength="13"/>
+                                <input type="text" class="form-control" placeholder="ID Number" name="id_Number"
+                                    #id_Number="ngModel" [(ngModel)]="personService.formData.id_Number" required
+                                    minlength="13" maxlength="13" />
                                 <div [hidden]="id_Number.valid || id_Number.pristine" class="alert-danger">
                                     ID Number is required
                                 </div>
                                 <div *ngIf="name.errors?.minlength">
                                     ID Number must be 13 characters long.
-                                  </div>
+                                </div>
                             </div>
                         </div>
                         <div class="row mt-5">
                             <div class="d-grid gap-2 col-6 mx-auto">
                                 <button class="btn btn-primary btn-block" type="submit"
-                                    [disabled]="form.invalid" >Save</button>
+                                    [disabled]="form.invalid">Save</button>
                             </div>
                         </div>
                         <div *ngIf="showAlert" class="row d-flex align-items-center justify-content-center mt-2">
@@ -58,4 +59,3 @@
     </form>
 </div>
 <app-accounts *ngIf="isEditForm"></app-accounts>
-

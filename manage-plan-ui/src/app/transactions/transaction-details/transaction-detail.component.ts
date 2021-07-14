@@ -11,7 +11,9 @@ import { TransactionService } from '../shared/transaction.service';
   ]
 })
 export class TransactionDetailComponent implements OnInit {
-
+  showAlert = false;
+  //selectedPersonRecord: Person = new Person();
+  recordExists = false;
   constructor(public service: TransactionService, private router: Router, private route: ActivatedRoute, private fb: FormBuilder) {  }
   accountId: number = 0;
 
