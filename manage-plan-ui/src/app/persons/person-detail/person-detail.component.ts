@@ -63,7 +63,7 @@ export class PersonDetailComponent implements OnInit {
               this.alertService.changeMessage(AlertType.Success)
               this.showAlert = true;
               this.closeAlert();
-              setInterval(() => {
+              setTimeout(() => {
                 this.router.navigate(['/persons']);
               }, 2000);
               this.resetForm(form);
@@ -101,7 +101,7 @@ export class PersonDetailComponent implements OnInit {
   }
 
   closeAlert() {
-    setInterval(() => {
+    setTimeout(() => {
       this.showAlert = false;
     }, 4000);
   }

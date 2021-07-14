@@ -6,8 +6,8 @@
                 <div class="card-body">
                     <div class="container-fluid">
                         <input type="hidden" name="id" value="accountService.formData.id" />
-                        <input type="hidden" name="person_code" value="accountService.formData.person_Code"
-                            [(ngModel)]="personId" />
+                        <input type="hidden" name="person_Code" value="accountService.formData.person_Code"
+                            [(ngModel)]="accountService.formData.person_Code" />
                         <div class="row d-flex align-items-center justify-content-center mt-5">
                             <div class="form-group col-md-6">
                                 <label for="name">Account Number</label>
@@ -22,7 +22,7 @@
                             <div class="form-group col-md-6">
                                 <label for="name">Outstanding Balance</label>
                                 <input type="number" class="form-control" placeholder="Outstanding Balance"
-                                    name="outstanding_balance" #outstanding_Balance="ngModel"
+                                    name="outstanding_Balance" #outstanding_Balance="ngModel"
                                     [(ngModel)]="accountService.formData.outstanding_Balance" required readonly />
                             </div>
                         </div>

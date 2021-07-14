@@ -19,19 +19,17 @@ export class AccountDetailComponent implements OnInit {
   constructor(public accountService: AccountService, public personService: PersonService, public alertService: AlertService, private router: Router, private route: ActivatedRoute) { }
 
   isEditForm = true;
-  personId: number = 0;
   showAlert = false;
   selectedAccountRecord: Account = new Account();
   recordExists = false;
 
   ngOnInit(): void {
-    this.personId = Number(this.route.snapshot.paramMap.get('personId'));
     if (this.router.url.includes("/add-account")) {
       this.accountService.formData = new Account();
+      this.accountService.formData.person_Code = Number(this.route.snapshot.paramMap.get('personId'));
       this.isEditForm = false;
     }
     else{
-     
       var accountId = Number(this.route.snapshot.paramMap.get('id'));
       this.accountService.getAccountById(accountId).subscribe(
         res => {
@@ -42,7 +40,6 @@ export class AccountDetailComponent implements OnInit {
           console.log(err);
         }
       );
-      console.log("person id account detail is", this.personId);
     }
   }
 
@@ -56,7 +53,6 @@ export class AccountDetailComponent implements OnInit {
 
   insertRecord(form: NgForm) {
     console.log(form.value)
-    console.log("person id insert is", this.personId);
 
     this.accountService.getAccountByAccountNumber(form.value.account_Number).subscribe(
       res => {
@@ -68,19 +64,18 @@ export class AccountDetailComponent implements OnInit {
           this.closeAlert();
         }
         else {
-
+          
           this.accountService.postAccount(form.value).subscribe(
             res => {
               this.alertService.changeMessage(AlertType.Success)
               this.showAlert = true;
               this.closeAlert();
-              console.log("this.personId insiide is ",this.personId)
-
-              setInterval(() => {
-                this.router.navigate([`/person-detail/${this.personId}`]);
+              
+              setTimeout(() => {
+                this.router.navigate([`/person-detail/${form.value.person_Code}`]);
+                this.accountService.refreshList(form.value.person_Code);
+                this.resetForm(form);
               }, 2000);
-              this.accountService.refreshList(this.personId);
-              this.resetForm(form);
             },
             err => {
               console.log(err);
@@ -98,9 +93,8 @@ export class AccountDetailComponent implements OnInit {
         this.alertService.changeMessage(AlertType.UpdateSuccess)
         this.showAlert = true;
         this.closeAlert();
-        this.resetForm(form);
+        this.accountService.refreshList(form.value.person_Code);
         this.ngOnInit();
-        this.accountService.refreshList(this.personId);
       },
       err => {
         console.log(err);
@@ -114,7 +108,7 @@ export class AccountDetailComponent implements OnInit {
   }
 
   closeAlert() {
-    setInterval(() => {
+    setTimeout(() => {
       this.showAlert = false;
     }, 4000);
   }
