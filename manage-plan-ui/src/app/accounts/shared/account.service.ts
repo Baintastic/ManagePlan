@@ -25,12 +25,6 @@ export class AccountService {
     return this.http.delete(`${this._baseUrl}/${id}`);
   }
 
-  refreshList(personId: number) {
-    this.http.get(`${this._baseUrl}/person/${personId}`)
-      .toPromise()
-      .then(res => { this.list = res as Account[]; });
-  }
-
   getAccountByAccountNumber(accountNumber: number) {
     return this.http.get(`${this._baseUrl}/accountNumber/${accountNumber}`);
   }
@@ -39,4 +33,9 @@ export class AccountService {
     return this.http.get(`${this._baseUrl}/${id}`);
   }
 
+  refreshList(personId: number) {
+    this.http.get(`${this._baseUrl}/person/${personId}`)
+      .toPromise()
+      .then(res => { this.list = res as Account[]; });
+  }
 }

@@ -1,10 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NgForm, NgModel } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertType } from 'src/app/alert/alert.model';
 import { AlertService } from 'src/app/alert/alert.service';
-import { Person } from 'src/app/persons/shared/person.model';
-import { PersonService } from 'src/app/persons/shared/person.service';
 import { Account } from '../shared/account.model';
 import { AccountService } from '../shared/account.service';
 
@@ -16,12 +14,12 @@ import { AccountService } from '../shared/account.service';
 })
 export class AccountDetailComponent implements OnInit {
 
-  constructor(public accountService: AccountService, public personService: PersonService, public alertService: AlertService, private router: Router, private route: ActivatedRoute) { }
-
   isEditForm = true;
-  showAlert = false;
+  showAlertMessage = false;
   selectedAccountRecord: Account = new Account();
   recordExists = false;
+
+  constructor(public accountService: AccountService, public alertService: AlertService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     if (this.router.url.includes("/add-account")) {
@@ -29,7 +27,7 @@ export class AccountDetailComponent implements OnInit {
       this.accountService.formData.person_Code = Number(this.route.snapshot.paramMap.get('personId'));
       this.isEditForm = false;
     }
-    else{
+    else {
       var accountId = Number(this.route.snapshot.paramMap.get('id'));
       this.accountService.getAccountById(accountId).subscribe(
         res => {
@@ -47,30 +45,24 @@ export class AccountDetailComponent implements OnInit {
     if (this.accountService.formData.code == 0) {
       this.insertRecord(form);
     }
-    else
+    else {
       this.updateRecord(form);
+    }
   }
 
   insertRecord(form: NgForm) {
-    console.log(form.value)
-
     this.accountService.getAccountByAccountNumber(form.value.account_Number).subscribe(
       res => {
         var data = res as Account;
         if (data) {
           this.recordExists = true;
-          this.alertService.changeMessage(AlertType.Warning, "account number")
-          this.showAlert = true;
-          this.closeAlert();
+          this.showMessageAlert(AlertType.Warning, "account number");
         }
         else {
-          
+
           this.accountService.postAccount(form.value).subscribe(
             res => {
-              this.alertService.changeMessage(AlertType.Success)
-              this.showAlert = true;
-              this.closeAlert();
-              
+              this.showMessageAlert(AlertType.Success);
               setTimeout(() => {
                 this.router.navigate([`/person-detail/${form.value.person_Code}`]);
                 this.accountService.refreshList(form.value.person_Code);
@@ -90,9 +82,7 @@ export class AccountDetailComponent implements OnInit {
   updateRecord(form: NgForm) {
     this.accountService.putAccount().subscribe(
       res => {
-        this.alertService.changeMessage(AlertType.UpdateSuccess)
-        this.showAlert = true;
-        this.closeAlert();
+        this.showMessageAlert(AlertType.UpdateSuccess);
         this.accountService.refreshList(form.value.person_Code);
         this.ngOnInit();
       },
@@ -102,14 +92,20 @@ export class AccountDetailComponent implements OnInit {
     );
   }
 
-  resetForm(form: NgForm) {
-    form.form.reset();
-    this.accountService.formData = new Account();
+  private showMessageAlert(alertType: AlertType, input: string = "") {
+    this.alertService.changeMessage(alertType, input);
+    this.showAlertMessage = true;
+    this.closeAlertMessage();
   }
 
-  closeAlert() {
+  private closeAlertMessage() {
     setTimeout(() => {
-      this.showAlert = false;
+      this.showAlertMessage = false;
     }, 4000);
+  }
+
+  private resetForm(form: NgForm) {
+    form.form.reset();
+    this.accountService.formData = new Account();
   }
 }

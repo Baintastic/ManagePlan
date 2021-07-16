@@ -1,7 +1,7 @@
 export class Person {
-    code : number;
-    name : string;
-    surname : string;
+    code: number;
+    name: string;
+    surname: string;
     id_Number: string;
 
     constructor() {

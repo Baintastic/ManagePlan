@@ -1,9 +1,9 @@
 import { Person } from "src/app/persons/shared/person.model";
 
 export class Account {
-    code : number;
-    person_Code : number;
-    account_Number : string;
+    code: number;
+    person_Code: number;
+    account_Number: string;
     outstanding_Balance: number;
 
     constructor() {

@@ -38,5 +38,4 @@ export class PersonService {
       .toPromise()
       .then(res => { this.list = res as Person[]; });
   }
-
 }

@@ -5,14 +5,14 @@
             <div class="card bg-light" style="max-width: 60rem;">
                 <div class="card-body">
                     <div class="container-fluid">
-                        <input type="hidden" name="id" value="accountService.formData.id" />
                         <input type="hidden" name="person_Code" value="accountService.formData.person_Code"
                             [(ngModel)]="accountService.formData.person_Code" />
                         <div class="row d-flex align-items-center justify-content-center mt-5">
                             <div class="form-group col-md-6">
                                 <label for="name">Account Number</label>
-                                <input type="text" class="form-control" placeholder="Account Number" name="account_Number"
-                                    #account_Number="ngModel" [(ngModel)]="accountService.formData.account_Number" required />
+                                <input type="text" class="form-control" placeholder="Account Number"
+                                    name="account_Number" #account_Number="ngModel"
+                                    [(ngModel)]="accountService.formData.account_Number" required />
                                 <div [hidden]="account_Number.valid || account_Number.pristine" class="alert-danger">
                                     Account Number is required
                                 </div>
@@ -26,14 +26,13 @@
                                     [(ngModel)]="accountService.formData.outstanding_Balance" required readonly />
                             </div>
                         </div>
-
                         <div class="row mt-5">
                             <div class="d-grid gap-2 col-6 mx-auto">
                                 <button class="btn btn-primary btn-block" type="submit"
                                     [disabled]="form.invalid">Save</button>
                             </div>
                         </div>
-                        <div *ngIf="showAlert" class="row d-flex align-items-center justify-content-center mt-2">
+                        <div *ngIf="showAlertMessage" class="row d-flex align-items-center justify-content-center mt-2">
                             <app-alert></app-alert>
                         </div>
                     </div>

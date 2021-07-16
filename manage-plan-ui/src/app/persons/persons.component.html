@@ -1,43 +1,44 @@
-
 <div class="container">
   <div class="row" style="text-align:center">
     <h1 class="display-4 my-5">Person List</h1>
     <div class="row justify-content-end">
       <div class="col-1">
-       <i class="bi bi-plus-square-fill float-end" routerLink="/add-person"  style="font-size: x-large;"> </i> 
+        <i class="bi bi-plus-square-fill float-end" routerLink="/add-person" style="font-size: x-large;"> </i>
       </div>
     </div>
     <div class="input-group mt-3 px-0">
       <span class="input-group-text"> <i class="bi bi-search"></i></span>
-      <input class="form-control" placeholder="Search By surname, id number or account Number"
-                    name="search" #search="ngModel" [(ngModel)]="searchText"/>
+      <input class="form-control" placeholder="Search By surname, id number or account Number" name="search"
+        #search="ngModel" [(ngModel)]="searchText" />
     </div>
     <table class="table table-dark table-striped">
-        <thead>
-          <tr>
-            <th>First Name</th>
-            <th>Surname</th>
-            <th>ID Number</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let person of service.list | filter:searchText | paginate: config">
-            <td>{{person.name}}</td>
-            <td>{{person.surname}}</td>
-            <td>{{person.id_Number}}</td>
-            <td>
-                <i class="bi bi-trash-fill" (click)="onDelete(person.code)"></i>
-            </td>
-            <td>
-              <i class="bi bi-pencil-square" (click)="populateForm(person)" routerLink="/person-detail/{{person.code}}"></i>
-              <!-- <i class="bi bi-pencil-square" routerLink="person/detail/{{person.code}}"(click)="populateForm(person)"></i> -->
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>First Name</th>
+          <th>Surname</th>
+          <th>ID Number</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of personService.list | filter:searchText | paginate: config">
+          <td>{{person.code}}</td>
+          <td>{{person.name}}</td>
+          <td>{{person.surname}}</td>
+          <td>{{person.id_Number}}</td>
+          <td>
+            <i class="bi bi-trash-fill" (click)="onDelete(person.code)"></i>
+          </td>
+          <td>
+            <i class="bi bi-pencil-square" (click)="populateForm(person)"
+              routerLink="/person-detail/{{person.code}}"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-      <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
   </div>
 </div>

@@ -13,37 +13,40 @@ import { PersonService } from '../shared/person.service';
   ]
 })
 export class PersonDetailComponent implements OnInit {
+  
   isEditForm = true;
-  showAlert = false;
+  showAlertMessage = false;
   selectedPersonRecord: Person = new Person();
   recordExists = false;
+
   constructor(public personService: PersonService, private router: Router, public alertService: AlertService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     if (this.router.url === "/add-person") {
       this.personService.formData = new Person();
       this.isEditForm = false;
-      return;
     }
-
-    //else get person details to update
-    var personId = Number(this.route.snapshot.paramMap.get('id'));
-    this.personService.getPersonById(personId).subscribe(
-      res => {
-        this.selectedPersonRecord = res as Person
-        this.personService.formData = Object.assign({}, this.selectedPersonRecord);
-      },
-      err => {
-        console.log(err);
-      }
-    );
+    else {
+      var personId = Number(this.route.snapshot.paramMap.get('id'));
+      this.personService.getPersonById(personId).subscribe(
+        res => {
+          this.selectedPersonRecord = res as Person
+          this.personService.formData = Object.assign({}, this.selectedPersonRecord);
+        },
+        err => {
+          console.log(err);
+        }
+      );
+    }
   }
 
   onSubmit(form: NgForm) {
-    if (this.personService.formData.code == 0)
+    if (this.personService.formData.code == 0) {
       this.insertRecord(form);
-    else
+    }
+    else {
       this.updateRecord(form);
+    }
   }
 
   insertRecord(form: NgForm) {
@@ -53,16 +56,12 @@ export class PersonDetailComponent implements OnInit {
         var data = res as Person;
         if (data) {
           this.recordExists = true;
-          this.alertService.changeMessage(AlertType.Warning, "ID number")
-          this.showAlert = true;
-          this.closeAlert();
+          this.showMessageAlert(AlertType.Warning, "ID number");
         }
         else {
           this.personService.postPerson(form.value).subscribe(
             res => {
-              this.alertService.changeMessage(AlertType.Success)
-              this.showAlert = true;
-              this.closeAlert();
+              this.showMessageAlert(AlertType.Success);
               setTimeout(() => {
                 this.router.navigate(['/persons']);
               }, 2000);
@@ -82,12 +81,10 @@ export class PersonDetailComponent implements OnInit {
   updateRecord(form: NgForm) {
     this.personService.putPerson().subscribe(
       res => {
-        this.alertService.changeMessage(AlertType.UpdateSuccess)
-        this.showAlert = true;
-        this.closeAlert();
+        this.showMessageAlert(AlertType.UpdateSuccess);
         this.resetForm(form);
-        this.ngOnInit();
         this.personService.refreshList();
+        this.ngOnInit();
       },
       err => {
         console.log(err);
@@ -95,14 +92,21 @@ export class PersonDetailComponent implements OnInit {
     );
   }
 
-  resetForm(form: NgForm) {
+  private showMessageAlert(alertType: AlertType, input: string = "") {
+    this.alertService.changeMessage(alertType, input);
+    this.showAlertMessage = true;
+    this.closeAlertMessage();
+  }
+
+  private closeAlertMessage() {
+    setTimeout(() => {
+      this.showAlertMessage = false;
+    }, 4000);
+  }
+
+  private resetForm(form: NgForm) {
     form.form.reset();
     this.personService.formData = new Person();
   }
 
-  closeAlert() {
-    setTimeout(() => {
-      this.showAlert = false;
-    }, 4000);
-  }
 }

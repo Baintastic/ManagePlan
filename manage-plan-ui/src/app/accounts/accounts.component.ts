@@ -12,31 +12,29 @@ import { AccountService } from './shared/account.service';
 })
 export class AccountsComponent implements OnInit {
 
-  
-  constructor(public accountService: AccountService, private route: ActivatedRoute ) { }
   searchText: string = "";
   formData: Account = new Account();
   personId: number = 0;
 
+  constructor(public accountService: AccountService, private route: ActivatedRoute) { }
+
   ngOnInit(): void {
     this.personId = Number(this.route.snapshot.paramMap.get('id'));
     this.accountService.refreshList(this.personId);
-    console.log("person id 1 is",this.personId);
   }
 
   populateForm(selectedRecord: Account) {
-    this.accountService.formData = Object.assign({},selectedRecord);
+    this.accountService.formData = Object.assign({}, selectedRecord);
   }
- 
-  onDelete(id:number)
-  {
+
+  onDelete(id: number) {
     this.accountService.deleteAccount(id)
-    .subscribe(
-      res=>{
-         this.accountService.refreshList(this.personId);
-      },
-      err=>{console.log(err)}
-    )
+      .subscribe(
+        res => {
+          this.accountService.refreshList(this.personId);
+        },
+        err => { console.log(err) }
+      )
   }
 
 }

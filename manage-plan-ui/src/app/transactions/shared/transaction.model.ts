@@ -1,8 +1,8 @@
 export class Transaction {
-    code : number;
-    account_Code : number;
-    transaction_Date : Date;
-    capture_Date : Date;
+    code: number;
+    account_Code: number;
+    transaction_Date: Date;
+    capture_Date: Date;
     amount: number;
     description: string;
 

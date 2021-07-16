@@ -5,15 +5,16 @@
             <div class="card bg-light" style="max-width: 60rem;">
                 <div class="card-body">
                     <div class="container-fluid">
-                        <input type="hidden" name="account_Code" value="service.formData.account_Code"
-                            [(ngModel)]="accountId" />
+                        <input type="hidden" name="account_Code" value="transactionService.formData.account_Code"
+                            [(ngModel)]="transactionService.formData.account_Code" />
                         <div class="row d-flex align-items-center justify-content-center mt-5">
                             <div class="form-group col-md-6">
                                 <label for="name">Transaction Date</label>
                                 <input type="date" class="form-control" id="BirthDate" name="transaction_Date"
-                                    [(ngModel)]="service.formData.transaction_Date"
-                                    (ngModelChange)="service.formData.transaction_Date = $event"
-                                    [value]="service.formData.transaction_Date" #transaction_Date="ngModel" required />
+                                    [(ngModel)]="transactionService.formData.transaction_Date"
+                                    (ngModelChange)="transactionService.formData.transaction_Date = $event"
+                                    [value]="transactionService.formData.transaction_Date" #transaction_Date="ngModel"
+                                    required />
                                 <div [hidden]="transaction_Date.valid || transaction_Date.pristine"
                                     class="alert-danger">
                                     Transaction Date is required
@@ -24,7 +25,8 @@
                             <div class="form-group col-md-6">
                                 <label for="name">Description</label>
                                 <input type="text" class="form-control" placeholder="Description" name="description"
-                                    #description="ngModel" [(ngModel)]="service.formData.description" required />
+                                    #description="ngModel" [(ngModel)]="transactionService.formData.description"
+                                    required />
                                 <div [hidden]="description.valid || description.pristine" class="alert-danger">
                                     Description is required
                                 </div>
@@ -34,7 +36,7 @@
                             <div class="form-group col-md-6">
                                 <label for="name">Amount</label>
                                 <input type="number" class="form-control" placeholder="Amount" name="amount" min="1"
-                                    #amount="ngModel" [(ngModel)]="service.formData.amount" required />
+                                    #amount="ngModel" [(ngModel)]="transactionService.formData.amount" required />
                                 <div [hidden]="amount.valid || amount.pristine" class="alert-danger">
                                     An amount bigger than 0 is required
                                 </div>
@@ -46,7 +48,7 @@
                                     [disabled]="form.invalid">Save</button>
                             </div>
                         </div>
-                        <div *ngIf="showAlert" class="row d-flex align-items-center justify-content-center mt-2">
+                        <div *ngIf="showAlertMessage" class="row d-flex align-items-center justify-content-center mt-2">
                             <app-alert></app-alert>
                         </div>
                     </div>
