@@ -33,6 +33,5 @@ export class TransactionService {
     this.http.get(`${this._baseUrl}/account/${accountId}`)
       .toPromise()
       .then(res => { this.list = res as Transaction[]; });
-
   }
 }
