@@ -23,10 +23,20 @@ export class AlertService {
       alert.class = "alert-success";
       alert.input = input;
     }
+    else if(alertType === AlertType.DeleteSuccess){
+      alert.message = "Record has been deleted.";
+      alert.class = "alert-success";
+      alert.input = input;
+    }
     else if(alertType === AlertType.Warning){
       alert.message =`This ${input} already exits.`;
       alert.class = "alert-warning";
     }
+    else if(alertType === AlertType.Error){
+      alert.message =`${input}`;
+      alert.class = "alert-danger";
+    }
+
     this.messageSource.next(alert)
   }
 }

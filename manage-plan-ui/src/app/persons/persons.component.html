@@ -38,7 +38,9 @@
         </tr>
       </tbody>
     </table>
-
+    <div *ngIf="showAlertMessage" class="row d-flex align-items-center justify-content-center mt-2">
+      <app-alert></app-alert>
+    </div>
     <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
   </div>
 </div>

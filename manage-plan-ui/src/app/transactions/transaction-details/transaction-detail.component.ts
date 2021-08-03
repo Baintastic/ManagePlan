@@ -153,5 +153,4 @@ export class TransactionDetailComponent implements OnInit {
     var currentDate = mm + '/' + dd + '/' + yyyy + today.toLocaleTimeString;
     return new Date(currentDate);
   }
-
 }

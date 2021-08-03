@@ -59,7 +59,6 @@ export class AccountDetailComponent implements OnInit {
           this.showMessageAlert(AlertType.Warning, "account number");
         }
         else {
-
           this.accountService.postAccount(form.value).subscribe(
             res => {
               this.showMessageAlert(AlertType.Success);

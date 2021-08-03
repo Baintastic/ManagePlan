@@ -15,6 +15,7 @@ export class Alert {
 export enum AlertType {
     Success,
     UpdateSuccess,
+    DeleteSuccess,
     Error,
     Info,
     Warning

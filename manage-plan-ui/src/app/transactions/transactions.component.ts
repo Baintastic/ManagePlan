@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AccountService } from '../accounts/shared/account.service';
 import { Transaction } from './shared/transaction.model';
 import { TransactionService } from './shared/transaction.service';
+import { Account } from '../accounts/shared/account.model';
 
 @Component({
   selector: 'app-transactions',
@@ -11,13 +13,22 @@ import { TransactionService } from './shared/transaction.service';
 })
 export class TransactionsComponent implements OnInit {
 
-  formData: Transaction = new Transaction();
   accountId: number = 0;
+  isAccountClosed = false;
 
-  constructor(public transactionService: TransactionService, private route: ActivatedRoute) { }
+  constructor(public transactionService: TransactionService, public accountService: AccountService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.accountId = Number(this.route.snapshot.paramMap.get('id'));
+    this.accountService.getAccountById(this.accountId).subscribe(
+      res => {
+        var selectedAccountRecord = res as Account;
+        this.isAccountClosed = selectedAccountRecord.is_Closed;
+      },
+      err => {
+        console.log(err);
+      }
+    );
     this.transactionService.refreshList(this.accountId);
   }
 
@@ -25,8 +36,8 @@ export class TransactionsComponent implements OnInit {
     this.transactionService.formData = Object.assign({}, selectedRecord);
   }
 
-  onDelete(id: number) {
-    this.transactionService.deleteTransaction(id)
+  onDelete(transactionId: number) {
+    this.transactionService.deleteTransaction(transactionId)
       .subscribe(
         res => {
           this.transactionService.refreshList(this.accountId);
@@ -34,5 +45,4 @@ export class TransactionsComponent implements OnInit {
         err => { console.log(err) }
       )
   }
-
 }
