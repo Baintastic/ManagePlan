@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div *ngIf="showNavigationBar" class="container-fluid">
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark ">
         <div class="container">
           <a class="navbar-brand" href="#">ManagePlan</a>
@@ -8,7 +8,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" routerLink="/home" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" routerLink="/persons">Persons</a>

@@ -27,6 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     TransactionsComponent,
     HomeComponent,
     TransactionDetailComponent,
+    LoginComponent,
     
   ],
   imports: [

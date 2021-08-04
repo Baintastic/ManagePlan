@@ -16,6 +16,7 @@ export enum AlertType {
     Success,
     UpdateSuccess,
     DeleteSuccess,
+    LoginSuccess,
     Error,
     Info,
     Warning

@@ -10,3 +10,13 @@
   .alert-danger {
     color: #842029;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.xxlarge{
+  font-size: xx-large;
+}
+
+.large{
+  font-size: large;
+}

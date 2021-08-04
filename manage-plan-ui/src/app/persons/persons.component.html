@@ -3,7 +3,7 @@
     <h1 class="display-4 my-5">Person List</h1>
     <div class="row justify-content-end">
       <div class="col-1">
-        <i class="bi bi-plus-square-fill float-end" routerLink="/add-person" style="font-size: x-large;"> </i>
+        <i class="bi bi-plus-circle-fill xxlarge float-end" routerLink="/add-person"> </i>
       </div>
     </div>
     <div class="input-group mt-3 px-0">
@@ -29,10 +29,10 @@
           <td>{{person.surname}}</td>
           <td>{{person.id_Number}}</td>
           <td>
-            <i class="bi bi-trash-fill" (click)="onDelete(person.code)"></i>
+            <i class="bi bi-trash-fill large" (click)="onDelete(person.code)"></i>
           </td>
           <td>
-            <i class="bi bi-pencil-square" (click)="populateForm(person)"
+            <i class="bi bi-pencil-square large" (click)="populateForm(person)"
               routerLink="/person-detail/{{person.code}}"></i>
           </td>
         </tr>

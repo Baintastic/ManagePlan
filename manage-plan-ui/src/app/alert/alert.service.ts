@@ -28,6 +28,11 @@ export class AlertService {
       alert.class = "alert-success";
       alert.input = input;
     }
+    else if(alertType === AlertType.LoginSuccess){
+      alert.message = "Login successful.";
+      alert.class = "alert-success";
+      alert.input = input;
+    }
     else if(alertType === AlertType.Warning){
       alert.message =`This ${input} already exits.`;
       alert.class = "alert-warning";

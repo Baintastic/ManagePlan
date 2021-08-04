@@ -13,7 +13,7 @@ import { PersonService } from '../shared/person.service';
   ]
 })
 export class PersonDetailComponent implements OnInit {
-  
+
   isEditForm = true;
   showAlertMessage = false;
   selectedPersonRecord: Person = new Person();
