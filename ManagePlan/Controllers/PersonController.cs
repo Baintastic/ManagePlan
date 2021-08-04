@@ -33,9 +33,9 @@ namespace ManagePlan.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(Person product)
+        public async Task<IActionResult> Add(Person person)
         {
-            await personService.AddPerson(product);
+            await personService.AddPerson(person);
             return Ok();
         }
 
@@ -47,9 +47,9 @@ namespace ManagePlan.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(Person product)
+        public async Task<IActionResult> Update(Person person)
         {
-            await personService.UpdatePerson(product);
+            await personService.UpdatePerson(person);
             return Ok();
         }
 

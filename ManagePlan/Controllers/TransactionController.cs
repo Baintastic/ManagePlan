@@ -33,9 +33,9 @@ namespace ManagePlan.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(Transaction product)
+        public async Task<IActionResult> Add(Transaction transaction)
         {
-            await transactionService.AddTransaction(product);
+            await transactionService.AddTransaction(transaction);
             return Ok();
         }
 
@@ -47,9 +47,9 @@ namespace ManagePlan.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(Transaction product)
+        public async Task<IActionResult> Update(Transaction transaction)
         {
-            await transactionService.UpdateTransaction(product);
+            await transactionService.UpdateTransaction(transaction);
             return Ok();
         }
 

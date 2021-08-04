@@ -16,6 +16,8 @@ import { TransactionDetailComponent } from './transactions/transaction-details/t
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AlertModule } from './alert/alert.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './login/login.component';
+import { AuthGuardService } from './auth-guard/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule
   ],
   providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

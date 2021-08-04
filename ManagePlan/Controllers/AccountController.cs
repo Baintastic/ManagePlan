@@ -33,9 +33,9 @@ namespace ManagePlan.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(Account product)
+        public async Task<IActionResult> Add(Account account)
         {
-            await accountService.AddAccount(product);
+            await accountService.AddAccount(account);
             return Ok();
         }
 
@@ -47,9 +47,9 @@ namespace ManagePlan.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(Account product)
+        public async Task<IActionResult> Update(Account account)
         {
-            await accountService.UpdateAccount(product);
+            await accountService.UpdateAccount(account);
             return Ok();
         }
 
@@ -62,7 +62,7 @@ namespace ManagePlan.Controllers
         }
 
         [HttpGet("accountNumber/{accountNumber}")]
-        public async Task<IActionResult> GetByIdNumberr(string accountNumber)
+        public async Task<IActionResult> GetByIdNumber(string accountNumber)
         {
             var data = await accountService.GetAccountByAccountNumber(accountNumber);
             if (data == null) return Ok();
