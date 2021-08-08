@@ -16,3 +16,12 @@ C:\Users\ThabaniTembe\source\repos\ManagePlanProject\ManagePlan.Core\obj\Debug\n
 C:\Users\ThabaniTembe\source\repos\ManagePlanProject\ManagePlan.Core\obj\Debug\netcoreapp3.1\ManagePlan.Core.csproj.CoreCompileInputs.cache
 C:\Users\ThabaniTembe\source\repos\ManagePlanProject\ManagePlan.Core\obj\Debug\netcoreapp3.1\ManagePlan.Core.dll
 C:\Users\ThabaniTembe\source\repos\ManagePlanProject\ManagePlan.Core\obj\Debug\netcoreapp3.1\ManagePlan.Core.pdb
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Core\bin\Debug\netcoreapp3.1\ManagePlan.Core.deps.json
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Core\bin\Debug\netcoreapp3.1\ManagePlan.Core.dll
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Core\bin\Debug\netcoreapp3.1\ManagePlan.Core.pdb
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Core\obj\Debug\netcoreapp3.1\ManagePlan.Core.csprojAssemblyReference.cache
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Core\obj\Debug\netcoreapp3.1\ManagePlan.Core.AssemblyInfoInputs.cache
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Core\obj\Debug\netcoreapp3.1\ManagePlan.Core.AssemblyInfo.cs
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Core\obj\Debug\netcoreapp3.1\ManagePlan.Core.csproj.CoreCompileInputs.cache
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Core\obj\Debug\netcoreapp3.1\ManagePlan.Core.dll
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Core\obj\Debug\netcoreapp3.1\ManagePlan.Core.pdb

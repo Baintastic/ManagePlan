@@ -13,7 +13,6 @@ export class AuthenticationGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      console.log("AlwaysAuthGuard");
       if (!this.Authguardservice.gettoken()) {  
         this.router.navigateByUrl("/login");  
     }  

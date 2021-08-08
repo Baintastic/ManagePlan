@@ -15,8 +15,7 @@
           <th>Description</th>
           <th>Transaction Date</th>
           <th>Capture Date</th>
-          <th></th>
-          <th></th>
+          <th *ngIf="!isAccountClosed"></th>
         </tr>
       </thead>
       <tbody>
@@ -27,10 +26,10 @@
           <td>{{transaction.description}}</td>
           <td>{{transaction.transaction_Date}}</td>
           <td>{{transaction.capture_Date}}</td>
-          <td>
+          <!-- <td>
             <i class="bi bi-trash-fill large" (click)="onDelete(transaction.code)"></i>
-          </td>
-          <td>
+          </td> -->
+          <td *ngIf="!isAccountClosed">
             <i class="bi bi-pencil-square large" (click)="populateForm(transaction)"
               routerLink="/transaction-detail/{{transaction.code}}"></i>
           </td>

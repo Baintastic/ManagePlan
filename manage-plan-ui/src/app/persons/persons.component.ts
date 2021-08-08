@@ -36,8 +36,9 @@ export class PersonsComponent implements OnInit {
 
   onDelete(personId: number) {
     var numofClosedAccounts = 0;
+    //get accounts by person id
     this.accountService.refreshList(personId);
-    var accounts = this.accountService.list;//geet accounts by person id
+    var accounts = this.accountService.list;
     if (accounts.length !== 0) {
       for (let index = 0; index < accounts.length; index++) {
         if (accounts[index].is_Closed) {
@@ -56,7 +57,7 @@ export class PersonsComponent implements OnInit {
           transactionIds[index] = accountIds[index];
         }
 
-        //del trans
+        //delele person and associated accounts and transactions
         for (let index = 0; index < transactionIds.length; index++) {
           this.transactionService.deleteTransaction(transactionIds[index])
             .subscribe(

@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
 import { AccountDetailComponent } from './accounts/account-detail/account-detail.component';
 import { AuthenticationGuard } from './auth-guard/authentication.guard';
+import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PersonDetailComponent } from './persons/person-detail/person-detail.component';
@@ -11,6 +13,8 @@ import { TransactionDetailComponent } from './transactions/transaction-details/t
 const routes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'home', component: HomeComponent, canActivate:[AuthenticationGuard]},
+  { path: 'about', component: AboutComponent},
+  { path: 'contact', component: ContactComponent},
   { path: 'persons', component: PersonsComponent, canActivate:[AuthenticationGuard]
   // children: [
   //     { path: 'detail/:id', component: PersonDetailComponent },

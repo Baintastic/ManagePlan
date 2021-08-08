@@ -53,9 +53,8 @@ export class TransactionDetailComponent implements OnInit {
   }
 
   insertRecord(form: NgForm) {
-    form.value.capture_Date = this.getCurrentDate();
+    form.value.capture_Date = new Date().toJSON().slice(0,10).replace(/-/g,'/');
     form.value.transaction_Date = new Date(form.value.transaction_Date);
-
     this.transactionService.postTransaction(form.value).subscribe(
       res => {
         var isEditForm = false;
@@ -145,12 +144,4 @@ export class TransactionDetailComponent implements OnInit {
     this.transactionService.formData = new Transaction();
   }
 
-  private getCurrentDate() {
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-    var currentDate = mm + '/' + dd + '/' + yyyy + today.toLocaleTimeString;
-    return new Date(currentDate);
-  }
 }

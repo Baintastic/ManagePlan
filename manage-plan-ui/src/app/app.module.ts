@@ -16,8 +16,11 @@ import { TransactionDetailComponent } from './transactions/transaction-details/t
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AlertModule } from './alert/alert.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { AuthGuardService } from './auth-guard/auth-guard.service';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,8 @@ import { AuthGuardService } from './auth-guard/auth-guard.service';
     HomeComponent,
     TransactionDetailComponent,
     LoginComponent,
+    AboutComponent,
+    ContactComponent,
     
   ],
   imports: [
@@ -41,9 +46,9 @@ import { AuthGuardService } from './auth-guard/auth-guard.service';
     Ng2SearchPipeModule,
     NgxPaginationModule,
     AlertModule,
-    NgbModule
+    NgbModule,
+    NoopAnimationsModule
   ],
-  providers: [],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })

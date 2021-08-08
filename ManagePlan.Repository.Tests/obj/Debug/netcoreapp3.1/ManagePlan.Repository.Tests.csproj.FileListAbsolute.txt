@@ -112,3 +112,9 @@ C:\Users\ThabaniTembe\source\repos\ManagePlan.Repository.Tests\bin\Debug\netcore
 C:\Users\ThabaniTembe\source\repos\ManagePlan.Repository.Tests\obj\Debug\netcoreapp3.1\ManagePlan.Repository.Tests.genruntimeconfig.cache
 C:\Users\ThabaniTembe\source\repos\ManagePlan.Repository.Tests\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Users\ThabaniTembe\source\repos\ManagePlan.Repository.Tests\bin\Debug\netcoreapp3.1\NSubstitute.dll
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository.Tests\obj\Debug\netcoreapp3.1\ManagePlan.Repository.Tests.csprojAssemblyReference.cache
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository.Tests\obj\Debug\netcoreapp3.1\ManagePlan.Repository.Tests.AssemblyInfoInputs.cache
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository.Tests\obj\Debug\netcoreapp3.1\ManagePlan.Repository.Tests.AssemblyInfo.cs
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository.Tests\obj\Debug\netcoreapp3.1\ManagePlan.Repository.Tests.csproj.CoreCompileInputs.cache
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository.Tests\obj\Debug\netcoreapp3.1\ManagePlan.Repository.Tests.dll
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Repository.Tests\obj\Debug\netcoreapp3.1\ManagePlan.Repository.Tests.pdb

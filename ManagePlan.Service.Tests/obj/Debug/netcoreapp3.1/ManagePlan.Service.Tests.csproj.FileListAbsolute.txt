@@ -114,3 +114,9 @@ C:\Users\ThabaniTembe\source\repos\ManagePlan.Service.Tests\bin\Debug\netcoreapp
 C:\Users\ThabaniTembe\source\repos\ManagePlan.Service.Tests\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\ThabaniTembe\source\repos\ManagePlan.Service.Tests\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\ThabaniTembe\source\repos\ManagePlan.Service.Tests\obj\Debug\netcoreapp3.1\ManagePlan.Service.Tests.genruntimeconfig.cache
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service.Tests\obj\Debug\netcoreapp3.1\ManagePlan.Service.Tests.csprojAssemblyReference.cache
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service.Tests\obj\Debug\netcoreapp3.1\ManagePlan.Service.Tests.AssemblyInfoInputs.cache
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service.Tests\obj\Debug\netcoreapp3.1\ManagePlan.Service.Tests.AssemblyInfo.cs
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service.Tests\obj\Debug\netcoreapp3.1\ManagePlan.Service.Tests.csproj.CoreCompileInputs.cache
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service.Tests\obj\Debug\netcoreapp3.1\ManagePlan.Service.Tests.dll
+C:\Users\ThabaniTembe\Desktop\Personal Projects\ManagePlan\ManagePlan.Service.Tests\obj\Debug\netcoreapp3.1\ManagePlan.Service.Tests.pdb
