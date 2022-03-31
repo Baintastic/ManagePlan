@@ -27,7 +27,7 @@
           <td>{{account.code}}</td>
           <td>{{account.person_Code}}</td>
           <td>{{account.account_Number}}</td>
-          <td>{{account.outstanding_Balance}}</td>
+          <td>{{account.outstanding_Balance | currency:'ZAR':'symbol':'1.2-2'}}</td>
           <!-- <td>
             <i class="bi bi-trash-fill large" (click)="onDelete(account.code)"></i>
           </td> -->

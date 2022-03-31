@@ -22,7 +22,7 @@
         <tr *ngFor="let transaction of transactionService.list">
           <td>{{transaction.code}}</td>
           <td>{{transaction.account_Code}}</td>
-          <td>{{transaction.amount}}</td>
+          <td>{{transaction.amount | currency:'ZAR':'symbol':'1.2-2'}}</td>
           <td>{{transaction.description}}</td>
           <td>{{transaction.transaction_Date}}</td>
           <td>{{transaction.capture_Date}}</td>
